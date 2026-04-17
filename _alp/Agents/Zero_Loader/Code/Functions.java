@@ -3672,7 +3672,7 @@ for (ParkingSpace_data dataParkingSpace : f_getParkingSpacesInSubScope(c_parking
 		
 		carportGC.p_owner = COC;
 		carportGC.p_ownerID = COC.p_actorID;
-		
+
 		//Add to collections
 		parkingSpace.c_containedGridConnections.add(carportGC);
 		carportGC.c_connectedGISObjects.add(parkingSpace);

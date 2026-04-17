@@ -2197,9 +2197,8 @@ else{
 		<BasicProperties Width="120" Height="30">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
-			<VisibleCode>cb_showFilterInterface.isEnabled()</VisibleCode>
-			<Enabled>true</Enabled>
-			<EnableExpression>!settings.isPublicModel() &amp;&amp; c_cbFilterOptions.size() &gt; 0</EnableExpression>
+			<VisibleCode>false</VisibleCode>
+			<Enabled>false</Enabled>
 			<ActionCode>gr_filterInterface.setVisible(cb_showFilterInterface.isSelected());
 
 if(!cb_showFilterInterface.isSelected()){
