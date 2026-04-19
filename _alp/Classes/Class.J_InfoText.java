@@ -108,26 +108,36 @@ public class J_InfoText implements Serializable {
     //}
 
     public Pair<String, Integer> restrictWidth( String txt, int width_ch ) {
+    	// Split on caller-supplied '\n' first so each paragraph wraps on its own.
+    	// Without this, a '\n' counts as whitespace during backward-scan and the
+    	// wrap point can land past it, splitting a line the caller wanted kept whole.
     	StringBuilder output = new StringBuilder();
-    	int remainingTextSize = txt.length();
-    	int currentIndex = 0;
     	int lines = 0;
-    	while (remainingTextSize > width_ch) {
-    		int i = 0;
-    		while (!Character.isWhitespace(txt.charAt(currentIndex + width_ch - i))) {
-	    		i++;
-	    		if (i > width_ch) {
-	    			throw new RuntimeException("Impossible to format string to fit within width.");
-	    		}
+    	String[] paragraphs = txt.split("\n", -1);
+    	for (int p = 0; p < paragraphs.length; p++) {
+    		String paragraph = paragraphs[p];
+    		int remainingTextSize = paragraph.length();
+    		int currentIndex = 0;
+    		while (remainingTextSize > width_ch) {
+    			int i = 0;
+    			while (!Character.isWhitespace(paragraph.charAt(currentIndex + width_ch - i))) {
+	    			i++;
+	    			if (i > width_ch) {
+	    				throw new RuntimeException("Impossible to format string to fit within width.");
+	    			}
+    			}
+				output.append(paragraph.substring(currentIndex, currentIndex + width_ch - i));
+    			output.append('\n');
+    			currentIndex += width_ch - i + 1;
+    			remainingTextSize -= width_ch - i + 1;
+    			lines++;
     		}
-			output.append(txt.substring(currentIndex, currentIndex + width_ch - i));
-    		output.append('\n');
-    		currentIndex += width_ch - i + 1;
-    		remainingTextSize -= width_ch - i + 1;
+    		output.append(paragraph.substring(currentIndex, paragraph.length()));
     		lines++;
+    		if (p < paragraphs.length - 1) {
+    			output.append('\n');
+    		}
     	}
-    	output.append(txt.substring(currentIndex, txt.length()));
-		lines++;
     	return new Pair(output.toString(), lines);
     }
     

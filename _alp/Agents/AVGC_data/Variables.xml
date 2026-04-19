@@ -3120,8 +3120,8 @@ OL_GridConnectionInsulationLabel.G, 4.0
 		       OL_EnergyCarriers.HEAT, 0.1576,
 		       OL_EnergyCarriers.METHANE, 0.0407,
 		       OL_EnergyCarriers.PETROLEUM_FUEL, 0.1864,
-		       OL_EnergyCarriers.HYDROGEN, 0.066//Grey hydrogen
-		       //OL_EnergyCarriers.HYDROGEN, 0.225,//green hydrogen
+		       //OL_EnergyCarriers.HYDROGEN, 0.066//Grey hydrogen
+		       OL_EnergyCarriers.HYDROGEN, 0.225//green hydrogen
 		       //OL_EnergyCarriers.IRON_POWDER, 0.6
 		),
 		2024, Map.of(
@@ -3129,8 +3129,8 @@ OL_GridConnectionInsulationLabel.G, 4.0
 		       OL_EnergyCarriers.HEAT, 0.1681,
 		       OL_EnergyCarriers.METHANE, 0.0346,
 		       OL_EnergyCarriers.PETROLEUM_FUEL, 0.189,
-		       OL_EnergyCarriers.HYDROGEN, 0.06//Grey hydrogen
-		       //OL_EnergyCarriers.HYDROGEN, 0.21,//green hydrogen
+		       //OL_EnergyCarriers.HYDROGEN, 0.06//Grey hydrogen
+		       OL_EnergyCarriers.HYDROGEN, 0.21//green hydrogen
 		       //OL_EnergyCarriers.IRON_POWDER, 0.6
 		),
 		2023, Map.of(
@@ -3138,8 +3138,8 @@ OL_GridConnectionInsulationLabel.G, 4.0
 		       OL_EnergyCarriers.HEAT, 0.1706,
 		       OL_EnergyCarriers.METHANE, 0.0396,
 		       OL_EnergyCarriers.PETROLEUM_FUEL, 0.1843,
-		       OL_EnergyCarriers.HYDROGEN, 0.075//Grey hydrogen
-		       //OL_EnergyCarriers.HYDROGEN, 0.195,//green hydrogen
+		       //OL_EnergyCarriers.HYDROGEN, 0.075//Grey hydrogen
+		       OL_EnergyCarriers.HYDROGEN, 0.195//green hydrogen
 		       //OL_EnergyCarriers.IRON_POWDER, 0.6
 		)
 )]]></Code>
